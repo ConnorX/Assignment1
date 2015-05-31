@@ -1,7 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/GameCalculator.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="comp2007_Assignment1.Default" %>
 
 <asp:Content ID="ctMain" runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+    <!--this is where the first game calculator was build starts with a div breaking from the others and makes a well to display it in a box-->
     <div class="well">
+        <!--this radio button list for wins and losses-->
         <div>
             <label for="rblResult" class="control-label">Result: </label> 
             <asp:RadioButtonList ID="rblResult" runat="server">
@@ -9,14 +11,14 @@
                 <asp:ListItem Text="Lose"></asp:ListItem>
             </asp:RadioButtonList>
         </div>
-
+        <!--the score text box and its validations-->
         <div>
         <label for="tbScore" class="control-label">Score: </label>
         <asp:TextBox ID="tbScore" runat="server"/>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="* Please Enter Score Amount" CssClass="alert alert-danger" ControlToValidate="tbScore" Display="Dynamic"></asp:RequiredFieldValidator>
         <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="* Enter a Numeric number greater than zero" MinimumValue="0" MaximumValue="999999999" CssClass="alert alert-danger" ControlToValidate="tbScore" Type="Integer" Display="Dynamic"></asp:RangeValidator>
         </div>
-
+        <!--the points allowed text box and its validations plus the compare validation to make sure the points arent the same--> 
         <div>
         <label for="tbPointsAllowed" class="control-label">Points Allowed: </label>
         <asp:TextBox ID="tbPointsAllowed" runat="server" />
@@ -24,7 +26,7 @@
         <asp:RangeValidator ID="RangeValidator2" runat="server" ErrorMessage="* Enter a Numeric number greater than zero" MinimumValue="0" MaximumValue="999999999" CssClass="alert alert-danger" ControlToValidate="tbPointsAllowed" Type="Integer" Display="Dynamic"></asp:RangeValidator>
         <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="* The Score and the Points Allowed cannot be the same" CssClass="alert alert-danger" ControlToCompare="tbScore" ControlToValidate="tbPointsAllowed" Operator="NotEqual" Type="Integer"></asp:CompareValidator>
         </div>
-
+        <!--the spectators text box and validations-->
         <div>
         <label for="tbSpectators" class="control-label">Number Of Spectators: </label>
         <asp:TextBox ID="tbSpectators" runat="server" />
@@ -32,7 +34,7 @@
         <asp:RangeValidator ID="RangeValidator3" runat="server" ErrorMessage="* Enter a Numeric number greater than zero" MinimumValue="0" MaximumValue="999999999" CssClass="alert alert-danger" ControlToValidate="tbSpectators" Type="Integer" Display="Dynamic"></asp:RangeValidator>
         </div>
     </div>
-
+    <!--This is where the first repeat is-->
     <div class="well">
         <div>
             <label for="rblResult1" class="control-label">Result: </label> 
@@ -64,7 +66,7 @@
         <asp:RangeValidator ID="RangeValidator6" runat="server" ErrorMessage="* Enter a Numeric number greater than zero" MinimumValue="0" MaximumValue="999999999" CssClass="alert alert-danger" ControlToValidate="tbSpectators1" Type="Integer" Display="Dynamic"></asp:RangeValidator>
         </div>
     </div>
-
+    <!--This is where the second repeat is-->
     <div class="well">
         <div>
             <label for="rblResult2" class="control-label">Result: </label> 
@@ -96,7 +98,7 @@
         <asp:RangeValidator ID="RangeValidator9" runat="server" ErrorMessage="* Enter a Numeric number greater than zero" MinimumValue="0" MaximumValue="999999999" CssClass="alert alert-danger" ControlToValidate="tbSpectators2" Type="Integer" Display="Dynamic"></asp:RangeValidator>
         </div>
     </div>
-
+    <!--This is where the third repeat is-->
     <div class="well">
         <div>
             <label for="rblResult3" class="control-label">Result: </label> 
@@ -128,11 +130,11 @@
         <asp:RangeValidator ID="RangeValidator12" runat="server" ErrorMessage="* Enter a Numeric number greater than zero" MinimumValue="0" MaximumValue="999999999" CssClass="alert alert-danger" ControlToValidate="tbSpectators3" Type="Integer" Display="Dynamic"></asp:RangeValidator>
         </div>
     </div>
-
+<!--This si the button to click to start the summary calculations-->
 <asp:Button ID="btnSummary" runat="server" Text="Summary" OnClick="btnSummary_Click"/>
-
+<!-- a small header to display where the summary is-->
 <h4>Summary</h4>
-
+    <!--This is where the labels for the summary are divided and placed-->
 <div>
     # of Games Won: <asp:Label ID="lblGamesWon" runat="server"></asp:Label>
 </div>
@@ -157,5 +159,5 @@
 <div>
     Average Spectators: <asp:Label ID="lblAVGSpectators" runat="server"></asp:Label>
 </div>
-
+    <!--The End -->
 </asp:Content>

@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Master Page</title>
+    <!--The header -->
     <header class=" alert alert-info">
         Connor's Game Calculator!!
     </header>
